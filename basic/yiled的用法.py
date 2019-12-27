@@ -16,13 +16,15 @@ def h():
     print (m)
     d = yield 12
     print(d)
-    print ('We are together!')
+    print('We are together!')
     yield 9
+
+
 c = h()
-m = next(c)  #m 获取了yield 5 的参数值 5
+m = next(c)  # m 获取了yield 5 的参数值 5
 
-d = c.send('Fighting!')  #d 获取了yield 12 的参数值12
+d = c.send('Fighting!')  # d 获取了yield 12 的参数值12
 c.send("zhw")
-print ('We will never forget the date', m, '.', d)
+print('We will never forget the date', m, '.', d)
 
-
+print("ces")
