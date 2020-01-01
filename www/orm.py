@@ -1,6 +1,6 @@
 __author__ = 'Michael Liao'
 
-import asyncio, logging
+import asyncio标准库, logging
 
 import aiomysql
 

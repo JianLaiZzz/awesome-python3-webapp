@@ -1,15 +1,20 @@
-import asyncio标准库
-import threading
-
+import asyncio
 
 # @asyncio.coroutine
 # def hello():
 #     print("hello,word");
-#     r=yield  from  asyncio.sleep(1);
-#     print("hello,again")
+#     # m=yield  from  asyncio.sleep(23);
+#     print("hello,agin");
+#
 # loop=asyncio.get_event_loop();
-# loop.run_until_complete(hello());
+# loop.run_until_complete(hello())
 # loop.close();
+# print("hehehhehe")
+
+
+import threading
+import asyncio
+
 
 # @asyncio.coroutine
 # def hello():
@@ -22,11 +27,10 @@ import threading
 # loop.run_until_complete(asyncio.wait(tasks))
 # loop.close()
 
-
-@asyncio标准库.coroutine
+@asyncio.coroutine
 def wget(host):
     print('wget %s...' % host)
-    connect = asyncio标准库.open_connection(host, 80)
+    connect = asyncio.open_connection(host, 80)
     reader, writer = yield from connect
     header = 'GET / HTTP/1.0\r\nHost: %s\r\n\r\n' % host
     writer.write(header.encode('utf-8'))
@@ -40,7 +44,7 @@ def wget(host):
     writer.close()
 
 
-loop = asyncio标准库.get_event_loop()
+loop = asyncio.get_event_loop()
 tasks = [wget(host) for host in ['www.sina.com.cn', 'www.sohu.com', 'www.163.com']]
-loop.run_until_complete(asyncio标准库.wait(tasks))
+loop.run_until_complete(asyncio.wait(tasks))
 loop.close()
